@@ -4,10 +4,14 @@ public class Soal1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Masukkan angka desimal: ");
+        System.out.print("Masukkan angka desimal (contoh: 12.36): ");
         double angka = input.nextDouble();
+
         int depanKoma = (int) angka;
-        int belakangKoma = (int) ((angka - depanKoma) * 100);
+
+        String desimalString = String.format("%.2f", angka);
+        String belakangKomaString = desimalString.split("\\.")[1];
+        int belakangKoma = Integer.parseInt(belakangKomaString); 
 
         if (depanKoma % 3 == 0 && belakangKoma % 3 == 0) {
             System.out.println("Angka depan dan belakang koma adalah kelipatan 3.");
