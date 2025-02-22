@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Soal2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Masukkan angka pertama: ");
+        double num1 = input.nextDouble();
+        System.out.print("Masukkan operator (+, -, *, /, %): ");
+        char operator = input.next().charAt(0);
+        System.out.print("Masukkan angka kedua: ");
+        double num2 = input.nextDouble();
+
+        double hasil;
+        switch (operator) {
+            case '+': hasil = num1 + num2; break;
+            case '-': hasil = num1 - num2; break;
+            case '*': hasil = num1 * num2; break;
+            case '/': hasil = (num2 != 0) ? num1 / num2 : Double.NaN; break;
+            case '%': hasil = num1 % num2; break;
+            default: hasil = Double.NaN; System.out.println("Operator tidak valid.");
+        }
+        System.out.println("Hasil perhitungan: " + hasil);
+
+        input.close();
+    }
+}
