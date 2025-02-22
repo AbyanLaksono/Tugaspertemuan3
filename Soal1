@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Soal1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Masukkan angka desimal: ");
+        double angka = input.nextDouble();
+        int depanKoma = (int) angka;
+        int belakangKoma = (int) ((angka - depanKoma) * 100);
+
+        if (depanKoma % 3 == 0 && belakangKoma % 3 == 0) {
+            System.out.println("Angka depan dan belakang koma adalah kelipatan 3.");
+        } else {
+            System.out.println("Tidak semua bagian angka adalah kelipatan 3.");
+        }
+
+        input.close();
+    }
+}
